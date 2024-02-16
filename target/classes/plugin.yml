@@ -1,7 +1,0 @@
-name: SystemAPI
-version: '1.0'
-main: com.system32.systemapi.SystemAPI
-api-version: '1.20'
-commands:
-  example:
-    description: Example command
