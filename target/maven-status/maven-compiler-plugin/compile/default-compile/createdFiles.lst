@@ -1,0 +1,11 @@
+com\system32\systemapi\api\command\Command.class
+com\system32\systemapi\api\command\CommandManager.class
+com\system32\systemapi\api\config\CustomConfigFile.class
+com\system32\systemapi\commands\ExampleCommand$2.class
+com\system32\systemapi\api\exceptions\CommandNotRegistered.class
+com\system32\systemapi\utils\AsyncUtils.class
+com\system32\systemapi\commands\ExampleCommand$1.class
+com\system32\systemapi\utils\MessageUtils.class
+com\system32\systemapi\SystemAPI.class
+com\system32\systemapi\api\command\SubCommand.class
+com\system32\systemapi\commands\ExampleCommand.class
