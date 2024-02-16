@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 
 public class ExampleCommand extends Command {
     public ExampleCommand() {
-        super(SystemAPI.get(), "example", "An example command");
+        super(SystemAPI.get(), "example", "systemapi.example");
 
         // Add subcommands
         addSubCommand(new SubCommand("hola") {

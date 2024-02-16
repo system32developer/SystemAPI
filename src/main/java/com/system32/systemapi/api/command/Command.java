@@ -1,33 +1,33 @@
 package com.system32.systemapi.api.command;
 
+import com.system32.systemapi.SystemAPI;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.system32.systemapi.utils.MessageUtils.msg;
+
 public abstract class Command implements TabCompleter, CommandExecutor {
     private final String name;
 
-    private final String description;
-    private final Plugin plugin;
-    private List<SubCommand> subCommands;
+    private final SystemAPI plugin;
+    private final List<SubCommand> subCommands;
     private final String permission;
 
-    public Command(Plugin plugin, String name, String description){
-        this(plugin, name, description, new ArrayList<>(), null);
+    public Command(SystemAPI plugin, String name){
+        this(plugin, name, new ArrayList<>(), null);
     }
 
-    public Command(Plugin plugin, String name, String description, String permission){
-        this(plugin, name, description, new ArrayList<>(), permission);
+    public Command(SystemAPI plugin, String name, String permission){
+        this(plugin, name, new ArrayList<>(), permission);
     }
 
-    public Command(Plugin plugin, String name, String description, List<SubCommand> subCommands, String permission){
+    public Command(SystemAPI plugin, String name, List<SubCommand> subCommands, String permission){
         this.name = name;
-        this.description = description;
         this.plugin = plugin;
         this.subCommands = subCommands == null ? new ArrayList<>() : subCommands;
         this.permission = permission;
@@ -37,12 +37,8 @@ public abstract class Command implements TabCompleter, CommandExecutor {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
-
-    public Plugin getPlugin() {
+    public SystemAPI getPlugin() {
         return plugin;
     }
 
@@ -52,6 +48,11 @@ public abstract class Command implements TabCompleter, CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {
+        if (getPermission() != null && !sender.hasPermission(getPermission())) {
+            msg(sender, "&fYou do not have permission to execute this command, you need the permission &c("+getPermission()+")", true);
+            return true;
+        }
+
         if (args.length > 0) {
             for (SubCommand subCommand : subCommands) {
                 if (subCommand.getName().equalsIgnoreCase(args[0])) {
