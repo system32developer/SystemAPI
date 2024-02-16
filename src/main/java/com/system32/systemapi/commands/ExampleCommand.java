@@ -1,6 +1,5 @@
 package com.system32.systemapi.commands;
 
-// ... existing code ...
 
 import com.system32.systemapi.SystemAPI;
 import com.system32.systemapi.api.command.Command;
@@ -12,23 +11,23 @@ public class ExampleCommand extends Command {
         super(SystemAPI.get(), "example", "systemapi.example");
 
         // Add subcommands
-        addSubCommand(new SubCommand("hola") {
+        addSubCommand(new SubCommand("hi") {
             @Override
             public void execute(CommandSender sender, String[] args) {
-                sender.sendMessage("¡Hola, " + sender.getName() + "!");
+                sender.sendMessage("¡Hi, " + sender.getName() + "!");
             }
         });
 
-        addSubCommand(new SubCommand("adios") {
+        addSubCommand(new SubCommand("bye") {
             @Override
             public void execute(CommandSender sender, String[] args) {
-                sender.sendMessage("¡Adiós, " + sender.getName() + "!");
+                sender.sendMessage("¡Bye, " + sender.getName() + "!");
             }
         });
     }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-        sender.sendMessage("¡Hola, " + sender.getName() + "! Este es el comando principal.");
+        sender.sendMessage("¡Hi, " + sender.getName() + "! this is the main command.");
     }
 }

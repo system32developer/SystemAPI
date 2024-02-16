@@ -28,6 +28,11 @@ public final class SystemAPI extends JavaPlugin {
         // Plugin shutdown logic
     }
 
+    //TODO
+    // Database Manager
+    // 
+
+
 
 
     public static SystemAPI get() {

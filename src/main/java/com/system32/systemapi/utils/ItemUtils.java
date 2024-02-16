@@ -15,7 +15,7 @@ import java.util.UUID;
 import static com.system32.systemapi.utils.MessageUtils.color;
 
 public class ItemUtils {
-    public static ItemStack itemBuilder(Material material, String name, String... lore){
+    public static ItemStack item(Material material, String name, String... lore){
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(color(name));
@@ -28,12 +28,12 @@ public class ItemUtils {
         item.setItemMeta(meta);
         return item;
     }
-    public static ItemStack itemBuilder(Material material, String name, List<String> lore){
-        return itemBuilder(material, name, lore.toArray(new String[0]));
+    public static ItemStack item(Material material, String name, List<String> lore){
+        return item(material, name, lore.toArray(new String[0]));
     }
 
-    public static ItemStack skullBuilder(String name, String texture, String... lore){
-        ItemStack item = itemBuilder(Material.PLAYER_HEAD, name, lore);
+    public static ItemStack skull(String name, String texture, String... lore){
+        ItemStack item = item(Material.PLAYER_HEAD, name, lore);
         NBT.modify(item, nbt -> {
             final ReadWriteNBT skullOwnerCompound = nbt.getOrCreateCompound("SkullOwner");
             skullOwnerCompound.setUUID("Id", UUID.randomUUID());
@@ -45,14 +45,14 @@ public class ItemUtils {
 
         return item;
     }
-    public static ItemStack skullBuilder(String name, Player owner, String... lore){
-        ItemStack skull = itemBuilder(Material.PLAYER_HEAD, name, lore);
+    public static ItemStack skull(String name, Player owner, String... lore){
+        ItemStack skull = item(Material.PLAYER_HEAD, name, lore);
         SkullMeta meta = (SkullMeta) skull.getItemMeta();
         meta.setOwnerProfile(owner.getPlayerProfile());
         skull.setItemMeta(meta);
         return skull;
     }
-    public static ItemStack skullBuilder(String name, String texture, List<String> lore){
-        return skullBuilder(name, texture, lore.toArray(new String[0]));
+    public static ItemStack skull(String name, String texture, List<String> lore){
+        return skull(name, texture, lore.toArray(new String[0]));
     }
 }
