@@ -1,0 +1,4 @@
+name: SystemAPI
+version: '${project.version}'
+main: com.system32.systemapi.SystemAPI
+api-version: '1.20'
