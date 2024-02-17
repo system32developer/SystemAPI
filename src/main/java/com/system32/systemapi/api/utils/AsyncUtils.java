@@ -1,4 +1,4 @@
-package com.system32.systemapi.utils;
+package com.system32.systemapi.api.utils;
 
 import com.system32.systemapi.SystemAPI;
 import org.bukkit.Bukkit;

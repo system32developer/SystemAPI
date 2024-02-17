@@ -1,4 +1,4 @@
-package com.system32.systemapi.utils;
+package com.system32.systemapi.api.utils;
 
 public class TimeUtils {
     public static long getTimeInMillis(int day, int hour, int minute, int second) {

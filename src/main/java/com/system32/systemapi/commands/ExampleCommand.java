@@ -11,19 +11,20 @@ public class ExampleCommand extends Command {
         super(SystemAPI.get(), "example", "systemapi.example");
 
         // Add subcommands
-        addSubCommand(new SubCommand("hi") {
-            @Override
-            public void execute(CommandSender sender, String[] args) {
-                sender.sendMessage("¡Hi, " + sender.getName() + "!");
-            }
-        });
-
-        addSubCommand(new SubCommand("bye") {
-            @Override
-            public void execute(CommandSender sender, String[] args) {
-                sender.sendMessage("¡Bye, " + sender.getName() + "!");
-            }
-        });
+        addSubCommands(
+                new SubCommand("hi") {
+                    @Override
+                    public void execute(CommandSender sender, String[] args) {
+                        sender.sendMessage("¡Hi, " + sender.getName() + "!");
+                    }
+                },
+                new SubCommand("bye") {
+                    @Override
+                    public void execute(CommandSender sender, String[] args) {
+                        sender.sendMessage("¡Bye, " + sender.getName() + "!");
+                    }
+                }
+        );
     }
 
     @Override

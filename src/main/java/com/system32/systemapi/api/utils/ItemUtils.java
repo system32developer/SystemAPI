@@ -1,4 +1,4 @@
-package com.system32.systemapi.utils;
+package com.system32.systemapi.api.utils;
 
 import de.tr7zw.changeme.nbtapi.NBT;
 import de.tr7zw.changeme.nbtapi.iface.ReadWriteNBT;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static com.system32.systemapi.utils.MessageUtils.color;
+import static com.system32.systemapi.api.utils.MessageUtils.color;
 
 public class ItemUtils {
     public static ItemStack item(Material material, String name, String... lore){

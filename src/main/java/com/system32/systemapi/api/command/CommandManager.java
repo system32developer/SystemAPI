@@ -1,7 +1,6 @@
 package com.system32.systemapi.api.command;
 
 import com.system32.systemapi.api.exceptions.CommandNotRegistered;
-import com.system32.systemapi.utils.MessageUtils;
 import org.bukkit.command.PluginCommand;
 
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static com.system32.systemapi.utils.MessageUtils.log;
+import static com.system32.systemapi.api.utils.MessageUtils.log;
 
 public class CommandManager {
 

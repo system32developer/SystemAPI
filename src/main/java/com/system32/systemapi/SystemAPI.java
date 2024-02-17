@@ -3,6 +3,7 @@ package com.system32.systemapi;
 import com.system32.systemapi.api.command.CommandManager;
 import com.system32.systemapi.api.config.CustomConfigFile;
 import com.system32.systemapi.commands.ExampleCommand;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SystemAPI extends JavaPlugin {

@@ -1,4 +1,4 @@
-package com.system32.systemapi.utils;
+package com.system32.systemapi.api.utils;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.io.BukkitObjectInputStream;

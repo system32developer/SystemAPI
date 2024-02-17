@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.system32.systemapi.utils.MessageUtils.msg;
+import static com.system32.systemapi.api.utils.MessageUtils.msg;
 
 public abstract class Command implements TabCompleter, CommandExecutor {
     private final String name;
@@ -95,6 +95,10 @@ public abstract class Command implements TabCompleter, CommandExecutor {
 
     protected void addSubCommand(SubCommand subCommand){
         subCommands.add(subCommand);
+    }
+
+    protected void addSubCommands(SubCommand ...subCommands){
+        this.subCommands.addAll(List.of(subCommands));
     }
 
     public final List<SubCommand> getSubCommands() {
